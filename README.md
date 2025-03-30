@@ -6,13 +6,12 @@ Welcome to my **LeetCode Daily Solutions** repository! 🚀
 This repository contains my daily solutions to LeetCode problems. The goal is to stay consistent with problem-solving, improve my coding skills, and prepare for technical interviews.
 
 ## 📂 Repository Structure
-The solutions are categorized based on difficulty and problem type:
+The solutions are in the following way:
 
 ```
-├── Easy/
-├── Medium/
-├── Hard/
-└── README.md
+├── question-name/
+   ├── solution.java
+   └── README.md
 ```
 
 Each folder contains solutions written in **Java, Python, or JavaScript** (or any other language I use).
