@@ -21,7 +21,7 @@ Each folder contains solutions written in **Java, Python, or JavaScript** (or an
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/leetcode-solutions.git
+   git clone https://github.com/akshatkashyap01/leetcode-solutions.git
    ```
 2. Navigate to the desired problem folder.
 3. Open and run the solution in your preferred IDE.
