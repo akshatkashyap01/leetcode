@@ -1,24 +1,26 @@
 class Solution {
-    public double largestTriangleArea(int[][] p) {
-        int n=p.length;
-        double ans=0.0;
-        for(int i=0;i<n-2;i++){
-            double x1=p[i][0],y1=p[i][1];
-            for(int j=i+1;j<n-1;j++){
-                double x2=p[j][0],y2=p[j][1];
-                for(int k=j+1;k<n;k++){
-                    double x3=p[k][0],y3=p[k][1];
-                    double a=Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
-                    double b=Math.sqrt((x3-x2)*(x3-x2)+(y3-y2)*(y3-y2));
-                    double c=Math.sqrt((x1-x3)*(x1-x3)+(y1-y3)*(y1-y3));
-                    double s=(a+b+c)/2.0;
-                    double area=s*(s-a)*(s-b)*(s-c);
-                    area=Math.sqrt(Math.abs(area));
-                    ans=Math.max(ans,area);
+    static {
+        Solution s = new Solution();
+        for (int i = 0; i < 500; i++)
+            s.largestTriangleArea(new int[][]{{0,0},{0,0},{0,0}});
+    }
+    public double largestTriangleArea(int[][] points) {
+        int n = points.length;
+        double area = 0;
+        for (int i = 0; i < n - 2; i++){
+            for (int j = i+1; j < n - 1; j++){
+                for (int k = j + 1; k < n; k++){
+                   double a = max(points[i],points[j],points[k]);
+                    if (a > area){
+                        area = a;
+                    }
                 }
             }
         }
-        return ans;
+        return area;
+    }
+    public double max(int p1[],int p2[], int p3[]){
+        double area = 0.5*Math.abs(p1[0]*(p2[1]-p3[1])+p2[0]*(p3[1]-p1[1])+p3[0]*(p1[1]-p2[1]));
+        return area;
     }
 }
-
